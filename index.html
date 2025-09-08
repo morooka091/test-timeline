@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>かっこいいタイムライン</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f5f5fc;
+      margin: 0;
+      padding: 20px;
+    }
+    .timeline {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: #7f8ce3;
+      top: 0;
+      bottom: 0;
+      left: 30px;
+      margin-left: -2px;
+    }
+    .container {
+      padding: 20px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 100%;
+    }
+    .container.left {
+      left: 0;
+    }
+    .container.right {
+      left: 50%;
+    }
+    .date {
+      position: absolute;
+      width: 80px;
+      left: -60px;
+      top: 20px;
+      font-weight: bold;
+      color: #7f8ce3;
+    }
+    .content {
+      background: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(127,140,227,0.15);
+      margin-bottom: 25px;
+      position: relative;
+    }
+    .container::before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      right: -8px;
+      background-color: #7f8ce3;
+      border: 3px solid #f5f5fc;
+      top: 24px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    /* 画像が使いたい場合 */
+    .content img { max-width: 100%; border-radius: 8px; margin-bottom: 8px;}
+
+    @media screen and (max-width: 600px) {
+      .timeline { max-width: 100%; }
+      .container { padding: 20px; }
+      .date { left: -40px; width: 60px;}
+    }
+  </style>
+</head>
+<body>
+  <h2>My Timeline</h2>
+  <div class="timeline">
+    <div class="container left">
+      <span class="date">2020</span>
+      <div class="content">
+        <img src="https://via.placeholder.com/300x80?text=Your+Photo" alt="写真">
+        <p>●●大学入学、コンピュータサイエンス専攻</p>
+      </div>
+    </div>
+    <div class="container left">
+      <span class="date">2021</span>
+      <div class="content">
+        <p>チーム開発プロジェクトに参加。全国大会出場。</p>
+      </div>
+    </div>
+    <div class="container left">
+      <span class="date">2023</span>
+      <div class="content">
+        <img src="https://via.placeholder.com/300x80?text=Award" alt="受賞写真">
+        <p>ハッカソンで最優秀賞を受賞。</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
